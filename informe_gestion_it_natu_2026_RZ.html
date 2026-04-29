@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe de Gestión IT — NatuPeru 2025–2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* ══════════════════════════════════════════
+   VARIABLES DE MARCA OFICIAL NATUPERU 2026
+══════════════════════════════════════════ */
+:root {
+  --naranja:        #ef9a49;
+  --naranja-hover:  #e8893a;
+  --tierra:         #70614e;
+  --tierra-oscuro:  #4a3f30;
+  --crema:          #f7f0e8;
+  --crema-suave:    #fdfaf6;
+  --marron-prof:    #2c1f0e;
+  --texto-base:     #2a2118;
+  --texto-medio:    #5a4e40;
+  --texto-suave:    #8a7a6a;
+  --borde:          #e2d5c3;
+  --borde-suave:    #ede5d8;
+  --blanco:         #ffffff;
+  --rojo-antes:     #c0392b;
+  --verde-ahora:    #1e7e45;
+  --bg-antes:       #fff5f5;
+  --bg-ahora:       #f3faf5;
+  --sombra:         rgba(44,31,14,0.08);
+}
+
+/* ══════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 10.5px; }
+
+body {
+  font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+  background: #d6c9b8;
+  color: var(--texto-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════════════════════════════════════
+   PÁGINA A4 — 794px × 1123px = 210mm × 297mm a 96dpi
+══════════════════════════════════════════ */
+.page {
+  width: 794px;
+  min-height: 1123px;
+  background: var(--blanco);
+  margin: 24px auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+.page-header {
+  background: var(--marron-prof);
+  padding: 30px 44px 0;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Decoración geométrica de fondo */
+.page-header::before {
+  content: '';
+  position: absolute;
+  right: -60px; top: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  border: 60px solid rgba(239,154,73,0.06);
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  right: 80px; top: -30px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  border: 30px solid rgba(239,154,73,0.05);
+}
+
+.header-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.eyebrow-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dot-naranja {
+  width: 8px; height: 8px;
+  background: var(--naranja);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.eyebrow-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.eyebrow-date {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.5px;
+}
+.eyebrow-date strong {
+  color: var(--naranja);
+  font-weight: 600;
+}
+
+.header-title {
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+.header-title h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--blanco);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+}
+.header-title h1 em {
+  font-style: normal;
+  color: var(--naranja);
+}
+
+.header-desc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.50);
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* KPI Strip */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.10);
+  margin: 0 -44px;
+}
+.kpi-cell {
+  padding: 16px 24px 18px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+.kpi-cell:last-child { border-right: none; }
+.kpi-num {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--naranja);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+.kpi-desc {
+  display: block;
+  font-size: 0.67rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.35;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ══════════════════════════════════════════
+   CONTENIDO PRINCIPAL
+══════════════════════════════════════════ */
+.page-body {
+  flex: 1;
+  padding: 24px 44px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* INTRO */
+.intro {
+  background: var(--crema);
+  border-left: 3px solid var(--naranja);
+  padding: 11px 16px;
+  border-radius: 0 6px 6px 0;
+}
+.intro p {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--texto-medio);
+  line-height: 1.65;
+}
+.intro p strong { color: var(--tierra-oscuro); font-weight: 600; }
+
+/* SECTION HEADER */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-head h2 {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--tierra);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  white-space: nowrap;
+}
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--borde);
+}
+.section-num {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--borde);
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════════════
+   GRID DE PROYECTOS
+══════════════════════════════════════════ */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* CARD */
+.card {
+  border: 1px solid var(--borde-suave);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--blanco);
+  box-shadow: 0 1px 6px var(--sombra);
+  display: flex;
+  flex-direction: column;
+}
+.card.span2 { grid-column: 1 / -1; }
+
+.card-top {
+  padding: 10px 14px 9px;
+  background: var(--crema-suave);
+  border-bottom: 1px solid var(--borde-suave);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.card-top h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--tierra-oscuro);
+  line-height: 1.25;
+}
+
+.pill {
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pill-ok   { background: #e8f5ec; color: #1a6934; border: 1px solid #b8dfc4; }
+.pill-wip  { background: #fff3e0; color: #b45309; border: 1px solid #fcd39a; }
+
+.card-content { padding: 10px 14px 12px; flex: 1; }
+
+/* ANTES / AHORA */
+.ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-bottom: 9px;
+}
+.ba-block {
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+.ba-block.antes {
+  background: var(--bg-antes);
+  border-top: 2px solid var(--rojo-antes);
+}
+.ba-block.ahora {
+  background: var(--bg-ahora);
+  border-top: 2px solid var(--verde-ahora);
+}
+.ba-label {
+  font-size: 0.60rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.ba-block.antes .ba-label { color: var(--rojo-antes); }
+.ba-block.ahora .ba-label { color: var(--verde-ahora); }
+.ba-label::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.ba-block p {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--texto-medio);
+  line-height: 1.5;
+}
+.ba-block p strong { color: var(--texto-base); font-weight: 600; }
+
+/* META BAR */
+.meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--borde-suave);
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.meta-label-txt {
+  font-size: 0.63rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.meta-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.ahorro-tag {
+  font-size: 0.70rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--borde);
+  color: var(--tierra-oscuro);
+  background: var(--crema);
+}
+.ahorro-tag.hot {
+  background: var(--naranja);
+  border-color: var(--naranja-hover);
+  color: var(--blanco);
+}
+.link-pbi {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--naranja-hover);
+  text-decoration: none;
+}
+.link-pbi svg { flex-shrink: 0; }
+.link-pbi:hover { text-decoration: underline; }
+
+/* ══════════════════════════════════════════
+   BLOQUE IMPACTO TOTAL
+══════════════════════════════════════════ */
+.impacto-band {
+  background: var(--tierra);
+  border-radius: 8px;
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.impacto-title-col {}
+.impacto-title-col span {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 2px;
+}
+.impacto-title-col strong {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--blanco);
+  display: block;
+  line-height: 1.3;
+}
+.impacto-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.i-stat {
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+}
+.i-stat + .i-stat::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 15%; bottom: 15%;
+  width: 1px;
+  background: rgba(255,255,255,0.12);
+}
+.i-stat .big {
+  display: block;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--naranja);
+  line-height: 1;
+}
+.i-stat .unit {
+  display: block;
+  font-size: 0.60rem;
+  color: rgba(255,255,255,0.40);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+.i-stat .desc {
+  display: block;
+  font-size: 0.67rem;
+  color: rgba(255,255,255,0.65);
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+/* ══════════════════════════════════════════
+   FOOTER DE PÁGINA
+══════════════════════════════════════════ */
+.page-footer {
+  background: var(--crema);
+  border-top: 2px solid var(--naranja);
+  padding: 8px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.footer-left {
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: var(--texto-suave);
+  letter-spacing: 0.3px;
+}
+.footer-brand {
+  font-size: 0.70rem;
+  font-weight: 700;
+  color: var(--tierra);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.footer-brand em {
+  font-style: normal;
+  color: var(--naranja);
+}
+.footer-page {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+/* ══════════════════════════════════════════
+   SEPARADOR PANTALLA ENTRE PÁGINAS
+══════════════════════════════════════════ */
+.page-divider {
+  width: 794px;
+  margin: 12px auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999;
+  font-size: 0.70rem;
+  font-family: 'Poppins', sans-serif;
+}
+.page-divider::before,
+.page-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed #bbb;
+}
+
+/* ══════════════════════════════════════════
+   HOJA 2 — HEADER SECUNDARIO
+══════════════════════════════════════════ */
+.page2-header {
+  background: var(--tierra);
+  padding: 20px 44px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.p2h-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--blanco);
+  line-height: 1.2;
+}
+.p2h-title em { font-style: normal; color: var(--naranja); }
+.p2h-sub {
+  font-size: 0.70rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.50);
+  margin-top: 4px;
+}
+.p2h-badge {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--naranja);
+  background: rgba(239,154,73,0.12);
+  border: 1px solid rgba(239,154,73,0.30);
+  padding: 5px 12px;
+  border-radius: 3px;
+}
+
+/* REPORTE CARD (Hoja 2) */
+.reporte-card {
+  border: 1px solid var(--borde-suave);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--blanco);
+  box-shadow: 0 1px 6px var(--sombra);
+  display: flex;
+  flex-direction: column;
+}
+.rc-top {
+  padding: 10px 14px 9px;
+  background: var(--crema-suave);
+  border-bottom: 1px solid var(--borde-suave);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.rc-top h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--tierra-oscuro);
+  line-height: 1.25;
+}
+.rc-area {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--tierra);
+  background: var(--crema);
+  border: 1px solid var(--borde);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-bottom: 7px;
+}
+.rc-body {
+  padding: 10px 14px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* BOTÓN VER REPORTE */
+.btn-pbi {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--naranja);
+  color: var(--blanco);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 5px 13px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  margin-top: 8px;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+.btn-pbi:hover { background: var(--naranja-hover); }
+.btn-pbi::after { content: ' →'; }
+
+/* SOPORTE GRID */
+.soporte-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.soporte-card {
+  background: var(--crema-suave);
+  border: 1px solid var(--borde-suave);
+  border-radius: 8px;
+  padding: 13px 14px;
+  box-shadow: 0 1px 4px var(--sombra);
+}
+.soporte-icon { font-size: 1.3rem; margin-bottom: 6px; display: block; }
+.soporte-card h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--tierra-oscuro);
+  margin-bottom: 5px;
+  line-height: 1.25;
+}
+.soporte-card p {
+  font-size: 0.70rem;
+  font-weight: 400;
+  color: var(--texto-medio);
+  line-height: 1.55;
+}
+
+/* RECOMENDACIÓN */
+.rec-card {
+  background: var(--crema);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: 0 1px 4px var(--sombra);
+}
+.rec-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+.rec-body h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--tierra-oscuro);
+  margin-bottom: 5px;
+}
+.rec-body p {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--texto-medio);
+  line-height: 1.65;
+}
+.rec-body p strong { color: var(--tierra-oscuro); font-weight: 600; }
+
+/* ══════════════════════════════════════════
+   PRINT — A4 PERFECTO
+══════════════════════════════════════════ */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html { font-size: 10px; }
+
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    overflow: hidden;
+  }
+
+  .page2 {
+    page-break-before: always;
+    page-break-after: auto;
+  }
+
+  .page-divider { display: none; }
+
+  /* forzar colores en impresión */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* evitar que las cards se corten */
+  .card, .reporte-card, .soporte-card, .rec-card { break-inside: avoid; }
+
+  /* links visibles en print */
+  .btn-pbi::after { content: ' →'; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 1 — AUTOMATIZACIONES
+═══════════════════════════════════════ -->
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="header-eyebrow">
+      <div class="eyebrow-left">
+        <div class="dot-naranja"></div>
+        <span class="eyebrow-text">Natucultura S.A. — NatuPeru Seeds · IT</span>
+      </div>
+      <span class="eyebrow-date">Gestión <strong>Sep 2025 — Abr 2026</strong></span>
+    </div>
+
+    <div class="header-title">
+      <h1>Informe de Gestión <em>IT</em><br>Automatización &amp; Reportería</h1>
+    </div>
+    <p class="header-desc">Resumen ejecutivo de lo que se construyó, cuánto tiempo se perdía antes y cuánto se gana hoy. Dirigido a Jefatura y Gerencia.</p>
+
+    <div class="kpi-strip">
+      <div class="kpi-cell">
+        <span class="kpi-num">~103</span>
+        <span class="kpi-desc">hrs/mes ahorradas<br>en automatizaciones (total)</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-num">−95%</span>
+        <span class="kpi-desc">reducción en tiempo<br>de generación de reportes</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-num">8</span>
+        <span class="kpi-desc">proyectos implementados<br>conectados a SAP S/4HANA</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <main class="page-body">
+
+    <!-- INTRO -->
+    <div class="intro">
+      <p>Antes de esta gestión, cada reporte dependía de descargas manuales desde SAP, consolidaciones en Excel y coordinación con el proveedor externo <strong>Enable</strong> para cualquier ajuste. Hoy, los procesos más repetitivos están automatizados y los reportes se consultan en tiempo real. Esto es lo que cambió.</p>
+    </div>
+
+    <!-- AUTOMATIZACIONES -->
+    <div class="section-head">
+      <h2>Automatizaciones</h2>
+      <div class="section-line"></div>
+      <span class="section-num">01</span>
+    </div>
+
+    <div class="grid-2">
+
+      <!-- Retenciones -->
+      <div class="card">
+        <div class="card-top">
+          <h3>Notificación de Retenciones a Proveedores</h3>
+          <span class="pill pill-ok">Operativo</span>
+        </div>
+        <div class="card-content">
+          <div class="ba-grid">
+            <div class="ba-block antes">
+              <div class="ba-label">Antes</div>
+              <p>Cada retención se notificaba manualmente por correo. Con <strong>70 a 90 casos por semana</strong>, el proceso consumía hasta <strong>10 minutos por envío</strong> — tiempo que el área dedicaba a una tarea completamente repetitiva.</p>
+            </div>
+            <div class="ba-block ahora">
+              <div class="ba-label">Ahora</div>
+              <p>Power Automate identifica las retenciones registradas en SAP y envía las notificaciones de forma automática. El equipo ya no interviene. Dashboard de monitoreo disponible en Power BI.</p>
+            </div>
+          </div>
+          <div class="meta-bar">
+            <span class="meta-label-txt">Ahorro estimado</span>
+            <div class="meta-right">
+              <span class="ahorro-tag hot">~53 hrs/mes — Mayor impacto</span>
+              <a class="link-pbi" href="https://app.powerbi.com/reportEmbed?reportId=5954bdec-ab15-4e02-bdb3-4e54df4eac04&autoAuth=true&ctid=7c873d99-c71b-450a-9920-bba544e13cb4" target="_blank">
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Ver dashboard
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FB70 RPA -->
+      <div class="card">
+        <div class="card-top">
+          <h3>RPA — Carga de Planilla en SAP (FB70)</h3>
+          <span class="pill pill-wip">En proceso</span>
+        </div>
+        <div class="card-content">
+          <div class="ba-grid">
+            <div class="ba-block antes">
+              <div class="ba-label">Antes</div>
+              <p>El registro de la planilla en SAP se hacía <strong>línea por línea de forma manual</strong> en cada cierre de mes, con alto riesgo de error y dependencia de una sola persona.</p>
+            </div>
+            <div class="ba-block ahora">
+              <div class="ba-label">Ahora</div>
+              <p>Un robot (RPA) toma el archivo de planilla y ejecuta la carga automática en SAP FB70, sin que el equipo deba intervenir. Actualmente en fase final de implementación.</p>
+            </div>
+          </div>
+          <div class="meta-bar">
+            <span class="meta-label-txt">Ahorro proyectado</span>
+            <span class="ahorro-tag">~18 hrs/mes · −75% del proceso</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notificaciones Pago -->
+      <div class="card">
+        <div class="card-top">
+          <h3>Notificaciones de Pago a Proveedores</h3>
+          <span class="pill pill-ok">Operativo</span>
+        </div>
+        <div class="card-content">
+          <div class="ba-grid">
+            <div class="ba-block antes">
+              <div class="ba-label">Antes</div>
+              <p>Tesorería elaboraba y enviaba <strong>manualmente los correos</strong> de confirmación de pago a cada proveedor, una tarea que se repetía varias veces por semana sin valor agregado.</p>
+            </div>
+            <div class="ba-block ahora">
+              <div class="ba-label">Ahora</div>
+              <p>Azure Logic Apps detecta los pagos registrados en SAP y envía automáticamente la confirmación al proveedor. El área de Tesorería ya no necesita intervenir en este paso.</p>
+            </div>
+          </div>
+          <div class="meta-bar">
+            <span class="meta-label-txt">Ahorro</span>
+            <span class="ahorro-tag">~6 hrs/mes eliminadas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOLPED -->
+      <div class="card">
+        <div class="card-top">
+          <h3>Recordatorios de Aprobación SOLPED</h3>
+          <span class="pill pill-ok">Operativo</span>
+        </div>
+        <div class="card-content">
+          <div class="ba-grid">
+            <div class="ba-block antes">
+              <div class="ba-label">Antes</div>
+              <p>El seguimiento de solicitudes de pedido pendientes se hacía de forma manual: <strong>llamadas, correos directos y revisión individual en SAP</strong> para saber quién faltaba aprobar.</p>
+            </div>
+            <div class="ba-block ahora">
+              <div class="ba-label">Ahora</div>
+              <p>Logic Apps revisa periódicamente las SOLPEDs pendientes y envía recordatorios automáticos a los aprobadores según sede y área, sin intervención del equipo de IT.</p>
+            </div>
+          </div>
+          <div class="meta-bar">
+            <span class="meta-label-txt">Ahorro</span>
+            <span class="ahorro-tag">~10 hrs/mes eliminadas</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+
+    <!-- IMPACTO TOTAL -->
+    <div class="impacto-band">
+      <div class="impacto-title-col">
+        <span>Impacto total</span>
+        <strong>Automatizaciones<br>en producción</strong>
+      </div>
+      <div class="impacto-stats-row">
+        <div class="i-stat">
+          <span class="big">~85</span>
+          <span class="unit">hrs / mes · hoy</span>
+          <span class="desc">Retenciones 53 + Trazabilidad 16<br>SOLPED 10 + Pagos 6</span>
+        </div>
+        <div class="i-stat">
+          <span class="big">~103</span>
+          <span class="unit">hrs / mes · con RPA</span>
+          <span class="desc">Total al completar<br>implementación FB70</span>
+        </div>
+        <div class="i-stat">
+          <span class="big">~1,236</span>
+          <span class="unit">hrs / año</span>
+          <span class="desc">Proyección anual<br>al 100% operativo</span>
+        </div>
+        <div class="i-stat">
+          <span class="big">4</span>
+          <span class="unit">procesos</span>
+          <span class="desc">Eliminados del<br>flujo manual del equipo</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <span class="footer-left">Área de IT · Gerencia de Administración y Operaciones · Uso interno</span>
+    <span class="footer-brand">NATU<em>PERU</em> SEEDS</span>
+    <span class="footer-page">Página 1 / 2</span>
+  </footer>
+
+</div><!-- /page 1 -->
+
+<!-- SEPARADOR VISUAL PANTALLA -->
+<div class="page-divider"><span>Página 2</span></div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 2 — REPORTES & SOPORTE
+═══════════════════════════════════════ -->
+<div class="page page2">
+
+  <!-- HEADER P2 -->
+  <header class="page2-header">
+    <div>
+      <div class="p2h-title">Reportería <em>Power BI</em> &amp; Soporte de Plataformas</div>
+      <div class="p2h-sub">Dashboards conectados a SAP S/4HANA · Sin dependencia de proveedores externos · Acceso en tiempo real</div>
+    </div>
+    <div class="p2h-badge">NatuPeru · IT 2026</div>
+  </header>
+  <div style="height:3px; background:var(--naranja); flex-shrink:0;"></div>
+
+  <!-- BODY P2 -->
+  <main class="page-body">
+
+    <!-- REPORTES -->
+    <div class="section-head">
+      <h2>Dashboards en producción</h2>
+      <div class="section-line"></div>
+      <span class="section-num">02</span>
+    </div>
+
+    <div class="grid-2">
+
+      <!-- Compras -->
+      <div class="reporte-card">
+        <div class="rc-top">
+          <h3>Reporte de Compras por Comprador</h3>
+          <span class="pill pill-ok">Operativo</span>
+        </div>
+        <div class="rc-body">
+          <div class="rc-area">📦 Logística &amp; Planeamiento</div>
+          <div class="ba-grid">
+            <div class="ba-block antes">
+              <div class="ba-label">Antes</div>
+              <p>Generar el reporte tomaba <strong>más de 3 días</strong> entre descarga de SAP y consolidación en Excel. Por su complejidad, solo se producía <strong>una vez al mes</strong>.</p>
+            </div>
+            <div class="ba-block ahora">
+              <div class="ba-label">Ahora</div>
+              <p>El usuario actualiza su archivo en SharePoint y Power BI genera el reporte completo en <strong>máximo 4 horas</strong>. Disponible a demanda, cuando el área lo necesite.</p>
+            </div>
+          </div>
+          <div class="meta-bar">
+            <span class="meta-label-txt">Reducción</span>
+            <div class="meta-right">
+              <span class="ahorro-tag hot">−95% · de 3 días a 4 horas</span>
+            </div>
+          </div>
+          <a class="btn-pbi" href="https://app.powerbi.com/reportEmbed?reportId=18b8d2e7-dfab-40e9-8e6c-ec3375f4f9b1&autoAuth=true&ctid=7c873d99-c71b-450a-9920-bba544e13cb4" target="_blank">Ver reporte</a>
+        </div>
+      </div>
+
+      <!-- Trazabilidad -->
+      <div class="reporte-card">
+        <div class="rc-top">
+          <h3>Trazabilidad Logística — Gerencia</h3>
+          <span class="pill pill-ok">Operativo</span>
+        </div>
+        <div class="rc-body">
+          <div class="rc-area">🌱 Gerencia / Logística</div>
+          <div class="ba-grid">
+            <div class="ba-block antes">
+              <div class="ba-label">Antes</div>
+              <p>La visibilidad logística dependía de <strong>consolidaciones manuales</strong> entre áreas. La información llegaba tarde y sin el detalle necesario para tomar decisiones.</p>
+            </div>
+            <div class="ba-block ahora">
+              <div class="ba-label">Ahora</div>
+              <p>Dashboard integrado con SAP. Gerencia y Logística visualizan el estado de operaciones por sede y período <strong>en tiempo real</strong>, sin esperar reportes intermedios.</p>
+            </div>
+          </div>
+          <div class="meta-bar">
+            <span class="meta-label-txt">Ahorro</span>
+            <span class="ahorro-tag">~16 hrs/mes en consolidación</span>
+          </div>
+          <a class="btn-pbi" href="https://app.powerbi.com/reportEmbed?reportId=daf0076e-1de5-4986-9586-6445fcaf3a5d&autoAuth=true&ctid=7c873d99-c71b-450a-9920-bba544e13cb4" target="_blank">Ver reporte</a>
+        </div>
+      </div>
+
+      <!-- CxC -->
+      <div class="reporte-card">
+        <div class="rc-top">
+          <h3>Partidas Abiertas — Cuentas por Cobrar</h3>
+          <span class="pill pill-ok">Operativo</span>
+        </div>
+        <div class="rc-body">
+          <div class="rc-area">💼 Cobranzas &amp; Planeamiento</div>
+          <div class="ba-grid">
+            <div class="ba-block antes">
+              <div class="ba-label">Antes</div>
+              <p>El reporte se armaba descargando partidas desde SAP y consolidando en Excel. El proceso <strong>tomaba entre 2 y 3 días</strong> y cualquier ajuste requería a Enable.</p>
+            </div>
+            <div class="ba-block ahora">
+              <div class="ba-label">Ahora</div>
+              <p>Dashboard actualizado automáticamente desde SAP vía OData. Incluye saldos, envejecimiento de deuda y estados de gestión. <strong>Sin depender de Enable.</strong></p>
+            </div>
+          </div>
+          <div class="meta-bar">
+            <span class="meta-label-txt">Reducción</span>
+            <span class="ahorro-tag hot">−95% · de 2–3 días a tiempo real</span>
+          </div>
+          <a class="btn-pbi" href="https://app.powerbi.com/groups/69bc3a24-0123-4db8-98e5-c11312a6c4bf/reports/14072672-e7cb-4d7d-b3cb-dd0d4f2639a7/9b969e6d80e17483deab?language=es-ES&experience=power-bi" target="_blank">Ver reporte</a>
+        </div>
+      </div>
+
+      <!-- Ventas -->
+      <div class="reporte-card">
+        <div class="rc-top">
+          <h3>Dashboard de Ventas</h3>
+          <span class="pill pill-ok">Operativo</span>
+        </div>
+        <div class="rc-body">
+          <div class="rc-area">📊 Comercial &amp; Gerencia</div>
+          <div class="ba-grid">
+            <div class="ba-block antes">
+              <div class="ba-label">Antes</div>
+              <p>Los datos de ventas se extraían manualmente de SAP y se consolidaban en Excel. Generar una vista completa del período tomaba <strong>2 a 3 días de trabajo</strong>.</p>
+            </div>
+            <div class="ba-block ahora">
+              <div class="ba-label">Ahora</div>
+              <p>Reporte con detalle por material, lote, sede y período, directo desde SAP. <strong>Disponible en tiempo real</strong> sin intervención de IT ni del proveedor Enable.</p>
+            </div>
+          </div>
+          <div class="meta-bar">
+            <span class="meta-label-txt">Reducción</span>
+            <span class="ahorro-tag hot">−95% · de 2–3 días a tiempo real</span>
+          </div>
+          <a class="btn-pbi" href="https://app.powerbi.com/reportEmbed?reportId=3cbc9f78-cb4f-4cfa-b055-b8a07bdbc90f&autoAuth=true&ctid=7c873d99-c71b-450a-9920-bba544e13cb4" target="_blank">Ver reporte</a>
+        </div>
+      </div>
+
+    </div><!-- /grid reportes -->
+
+    <!-- SOPORTE -->
+    <div class="section-head">
+      <h2>Soporte de Plataformas</h2>
+      <div class="section-line"></div>
+      <span class="section-num">03</span>
+    </div>
+
+    <div class="soporte-grid">
+      <div class="soporte-card">
+        <span class="soporte-icon">📁</span>
+        <h4>SharePoint — Gestión Documental</h4>
+        <p>Implementación y acompañamiento a áreas en la adopción de SharePoint como repositorio central de documentos, con bibliotecas organizadas y flujos de aprobación.</p>
+      </div>
+      <div class="soporte-card">
+        <span class="soporte-icon">📈</span>
+        <h4>Soporte Power BI</h4>
+        <p>Capacitación y soporte continuo a usuarios en el uso de los dashboards publicados. Ajustes, nuevas vistas y atención de requerimientos del negocio.</p>
+      </div>
+      <div class="soporte-card">
+        <span class="soporte-icon">📷</span>
+        <h4>NatuMedia</h4>
+        <p>Soporte técnico al sistema de captura de imágenes de fases de plantación de semillas. Mantenimiento operativo para garantizar la continuidad del registro visual agrícola.</p>
+      </div>
+    </div>
+
+    <!-- RECOMENDACIÓN -->
+    <div class="section-head">
+      <h2>Próximos pasos</h2>
+      <div class="section-line"></div>
+      <span class="section-num">04</span>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-icon">🌱</div>
+      <div class="rec-body">
+        <h4>Sostenibilidad de los proyectos implementados</h4>
+        <p>Los proyectos descritos ya generan valor operativo concreto, pero requieren <strong>soporte técnico continuo</strong> para mantenerse estables a medida que el negocio evoluciona. Cambios en SAP, nuevos requerimientos o actualizaciones de plataforma pueden afectar su funcionamiento si no hay una persona dedicada. Se recomienda formalizar el rol de <strong>Analista de BI &amp; Automatización</strong> dentro del área de IT, asegurando que los proyectos no dependan de esfuerzo puntual sino de una estructura que los sostenga en el tiempo.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <span class="footer-left">Área de IT · Gerencia de Administración y Operaciones · Abril 2026</span>
+    <span class="footer-brand">NATU<em>PERU</em> SEEDS</span>
+    <span class="footer-page">Página 2 / 2</span>
+  </footer>
+
+</div><!-- /page 2 -->
+
+</body>
+</html>
